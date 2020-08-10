@@ -42,7 +42,8 @@
         </div>
         <div class="col-md-4">
           <!-- Mars Facts -->
-          <div class="row" id="mars-facts">
+          <!-- Mars Facts -->
+          <div class="row" id="mars-facts"style="float: right;">
             <h4>Mars Facts</h4>
             {{ mars.facts | safe }}
           </div>
@@ -50,5 +51,27 @@
       </div>
     </div>
   </body>
-</html>
+​
+      <!-- Section for High Resolution Images of Mars -->
+      <div class="row" id="mars-hemisphere">
+        <div class="page-header">
+            <h2 class="text-center">Mars Hemispheres</h2>
+        </div>
+        {% for hemisphere in mars.hemispheres %}
+        <div class="col-md-3">
+          <div class="thumbnail">
+            <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="...">
+            <div class="caption">
+              <h3>{{hemisphere.title}}</h3>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        </div>
+        <div class="alert alert-primary" role="alert">
+          If you want to visit the original website <a href="https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars" class="alert-link">follow this link</a>. Enjoy!
+        </div>
 
+    </div>
+  </body>
+</html>

@@ -16,16 +16,10 @@ def index():
 @app.route("/scrape")
 def scrape():
    
-   
-   try:
-       mars = mongo.db.mars
-       mars_data = scraping.scrape_all() 
-       mars.update({}, mars_data, upsert=True)
-   except expression as identifier:
-       print(identifier)
-   
-   
-   return "Scraping Successful!"
+    mars = mongo.db.mars
+    mars_data = scraping.scrape_all() 
+    mars.update({}, mars_data, upsert=True)
+    return "Scraping Successful!"
 
 if __name__ == "__main__":
    app.run()

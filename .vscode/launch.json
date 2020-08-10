@@ -1,0 +1,60 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File - Something else",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}", //${file} is the current opened file
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Flask: HelloWorld",
+            "type": "python",
+            "request": "launch",
+            "module" : "flask",
+            "env" :{
+                "FLASK_APP" : "${Data Analysis Class}/Module 9/helloWorldFlask.py",
+                "FLASK_ENV": "development",
+                "FLASK_DEBUG": "0"
+            },
+            "args" : [
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ],
+            "jinja": true
+        },
+        {
+            "name": "Flask: Run Current File",
+            "type": "python",
+            "request": "launch",
+            "module" : "flask",
+            "env" :{
+                "FLASK_APP" : "${file}",
+                "FLASK_ENV": "development",
+                "FLASK_DEBUG": "0"
+            },
+            "args" : [
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ],
+            "jinja": true
+        },
+        {
+            "name": "IcecreamStore",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/Week9/icecreamStore.py", //${file} is the current opened file
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Employees DB",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/Week9/hrDataBaseSqlAlchemy.py", //${file} is the current opened file
+            "console": "integratedTerminal"
+        }
+    ]
+}
